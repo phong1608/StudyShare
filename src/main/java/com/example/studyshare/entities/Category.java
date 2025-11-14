@@ -1,0 +1,27 @@
+package com.example.studyshare.entities;
+
+import jakarta.persistence.*;
+import lombok.*;
+import java.util.List;
+
+@Entity
+@Table(name = "categories")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Category {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long categoryId;
+
+    @Column(nullable = false, unique = true)
+    private String name;
+
+    private String description;
+
+    @OneToMany(mappedBy = "category")
+    private List<FileResource> files;
+}
