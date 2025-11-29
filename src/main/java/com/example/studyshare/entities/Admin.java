@@ -17,12 +17,6 @@ public class Admin {
 
     private String username;
     private String password;
-    public Admin() {
-    }
-    public Admin(long id, String username, String password) {
-
-    }
-
 
 
 
